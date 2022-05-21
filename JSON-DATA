@@ -1,0 +1,11 @@
+
+// JSON DATA
+student ={
+    name : "marium",
+    fatherName : "khan",
+    Course : "blockchain",
+    batch : 3,
+    year : 2022
+}
+console.log(student);
+console.log(student.name);
