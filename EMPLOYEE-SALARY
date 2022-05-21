@@ -1,10 +1,114 @@
-- 👋 Hi, I’m @SYEDA-KHINSA
-- 👀 I’m interested in ...
-- 🌱 I’m currently learning ...
-- 💞️ I’m looking to collaborate on ...
-- 📫 How to reach me ...
+data = [
+  {
+      ID: 11,
+      firstName: "SYEDA KHINSA ",
+      LastName: "MUKHTAR",
+      Salary: 90000,
+  },
+  {
 
-<!---
-SYEDA-KHINSA/SYEDA-KHINSA is a ✨ special ✨ repository because its `README.md` (this file) appears on your GitHub profile.
-You can click the Preview link to take a look at your changes.
---->
+      ID: 567,
+      firstName: "MARIUM",
+      LastName: "NAWAZ",
+      Salary: 800000,
+  },
+  {
+      ID: 156,
+      firstName: "AHMED",
+      LastName: "KHAN",
+      Salary: 700000,
+  }
+
+]
+temp = "";
+// CREATE CLASS
+class Employee {
+  constructor(ID, firstName, LastName, Salary) {
+      this.ID = ID;
+      this.firstName = firstName;
+      this.LastName = LastName;
+      this.Salary = Salary;
+  }
+  getID() {
+      temp = data.filter(element => {
+          if (element.firstName == this.firstName) {
+              return element;
+          }
+      });
+      if (temp.length > 0) {
+          console.log(temp[0].ID);
+      } else {
+          console.log("Not found");
+      }
+
+  }
+  getfirstName() {
+      temp = data.filter(element => {
+          if (element.ID == this.ID) {
+              return element;
+          }
+      });
+      if (temp.length > 0) {
+          console.log(temp[0].firstName);
+      } else {
+          console.log("Not found");
+      }
+  }
+  getLastName() {
+      temp = data.filter(element => {
+          if (element.Salary == this.Salary) {
+              return element;
+          }
+      });
+      if (temp.length > 0) {
+          console.log(temp[0].LastName);
+      } else {
+          console.log("Not found");
+      }
+
+  }
+  getSalary() {
+      temp = data.filter(element => {
+          if (element.ID == this.ID) {
+              return element;
+          }
+      });
+      if (temp.length > 0) {
+          console.log(temp[0].Salary);
+      } else {
+          console.log("Not found");
+      }
+  }
+  setSalary() {
+      temp = data.filter((element, i) => {
+          if (element.ID == this.ID) {
+              // console.log(i);
+              console.log("Before set");
+              console.log(data[i]);
+
+              data[i].Salary = data[i].Salary + this.Salary
+
+              console.log("After set");
+              console.log(data[i]);
+          }
+      });
+  }
+
+  getAnnualSalary() {
+      temp = data.filter((element, i) => {
+          if (element.ID == this.ID) {
+              console.log(data[i].Salary * 12);
+          }
+      });
+  }
+
+}  // CLASS END
+
+
+Employee = new Employee(11, "SYEDA KHINSA", "MUKHTAR", 90000)
+Employee.getID()
+Employee.getfirstName()
+Employee.getLastName()
+Employee.getSalary()
+Employee.setSalary()
+Employee.getAnnualSalary()
